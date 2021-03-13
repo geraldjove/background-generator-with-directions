@@ -59,7 +59,7 @@ function updateColor() {
     css.textContent = body.style.background + ";";
 }
 
-// gradientHor(); // initial state when starting the website
+gradientHor(); // initial state when starting the website
 
 color1.addEventListener("input", updateColor);
 color2.addEventListener("input", updateColor);

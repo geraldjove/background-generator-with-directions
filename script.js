@@ -3,7 +3,7 @@ var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
 var css = document.querySelector("h3");
-var direction = "";
+var direction = "";                                 //initial state of direction is none.
 
 //get buttons
 var button = document.getElementsByTagName("button");
@@ -12,8 +12,10 @@ var buttonHor = document.getElementById("horizontal");
 var buttonRad = document.getElementById("radial");
 
 function gradientVer() {
-    direction = "linear-gradient(";
-    body.style.background = "linear-gradient(" 
+    direction = "linear-gradient(";                 //value of direction is "linear-gradient(" when gradientVer() is ran.
+  
+  body.style.background = 
+    direction 
     + color1.value 
     + "," 
     + color2.value
@@ -22,10 +24,10 @@ function gradientVer() {
     css.textContent = body.style.background + ";";
 }
 
-
 function gradientHor() {
-    direction = "linear-gradient(to right,";
-    body.style.background = "linear-gradient(to right," 
+    direction = "linear-gradient(to right,";        //value of direction is "linear-gradient(to right," when gradientHor() is ran.
+    body.style.background = 
+    direction 
     + color1.value 
     + "," 
     + color2.value
@@ -35,8 +37,9 @@ function gradientHor() {
 }
 
 function gradientRad() {
-    direction = "radial-gradient(";
-    body.style.background = "radial-gradient(" 
+    direction = "radial-gradient(";                 //value of direction is "radial-gradient" when gradientRad() is ran.
+    body.style.background = 
+    direction 
     + color1.value 
     + "," 
     + color2.value
@@ -49,7 +52,7 @@ function gradientRad() {
 
 function setBackground() {
     body.style.background = 
-    direction
+    direction                                       //this direction variable changes when you click one of the options. This will change into the value of the direction per function.
     + color1.value 
     + "," 
     + color2.value
@@ -57,9 +60,11 @@ function setBackground() {
     css.textContent = body.style.background + ";";
 }
 
+gradientHor(); // initial state when starting the website
+
 color1.addEventListener("input", setBackground);
 color2.addEventListener("input", setBackground);
 
-buttonVer.addEventListener("click", gradientVer);
-buttonHor.addEventListener("click", gradientHor);
-buttonRad.addEventListener("click", gradientRad);
+buttonVer.addEventListener("click", gradientVer);   //changes the value of direction to "vertical" on-click.
+buttonHor.addEventListener("click", gradientHor);   //changes the value of direction to "horizontal" on-click.
+buttonRad.addEventListener("click", gradientRad);   //changes the value of direction to "radial" on-click.

@@ -64,6 +64,6 @@ function updateColor() {
 color1.addEventListener("input", updateColor);
 color2.addEventListener("input", updateColor);
 
-buttonVer.addEventListener("click", gradientVer); //changes the value of direction to "vertical" on-click.
-buttonHor.addEventListener("click", gradientHor); //changes the value of direction to "horizontal" on-click.
-buttonRad.addEventListener("click", gradientRad); //changes the value of direction to "radial" on-click.
+buttonVer.addEventListener("click", gradientVer); //changes the value of direction to "linear-gradient(" on-click.
+buttonHor.addEventListener("click", gradientHor); //changes the value of direction to "linear-gradient(to right," on-click.
+buttonRad.addEventListener("click", gradientRad); //changes the value of direction to "radial-gradient(" on-click.
